@@ -1,0 +1,9 @@
+name: Build and Push to ACR
+
+on:
+  workflow_dispatch:
+    inputs:
+      push:
+        description: 'Set to true to push to ACR'
+        required: false
+        default: 'false'
