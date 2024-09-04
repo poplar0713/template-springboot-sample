@@ -1,0 +1,51 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore idea IDE files
+.idea/
+
+# Ignore Visual Studio Code files
+.vscode/
+
+# Java specific files
+*.class
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+
+# Package Files
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore Maven and Gradle directories
+target/
+build/
+
+# Ignore all user-generated files for local environment
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore node_modules if you’re using any frontend JavaScript frameworks
+node_modules/
+
+# Ignore OS generated files
+Thumbs.db
+Desktop.ini
+
+# Ignore IDE specific files (JetBrains, Eclipse, etc.)
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+
+# Ignore temporary files
+*.swp
+*.swo
