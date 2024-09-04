@@ -34,9 +34,15 @@ jobs:
       run: |
         az acr login --name ${{ secrets.ACR_NAME }}
 
-    - name: Build and push image to ACR
+    - name: Build Docker image
       run: |
         docker build -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ secrets.ACR_REPO_NAME }}:${{ github.sha }} .
+
+    # Conditionally push the image based on environment
+    - name: Conditionally Push Image to ACR
+      if: github.event_name != 'pull_request' && github.event.pull_request == null && inputs.push == 'true'
+      run: |
+        echo "Skipping image push as 'push' is set to false."
         docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ secrets.ACR_REPO_NAME }}:${{ github.sha }}
 
     - name: Azure logout
