@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.name }}
-  description: ${{ values.description }}
+  name: {{ cookiecutter.project_name }}
+  description: {{ cookiecutter.description }}
 spec:
   type: service
-  owner: ${{ values.owner }}
+  owner: {{ cookiecutter.owner }}
   lifecycle: production # experimental
